@@ -134,3 +134,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DATABASES['default'] = dj_database_url.config()
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

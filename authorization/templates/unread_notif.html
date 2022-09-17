@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{% block title %}Изменить проект{% endblock title %}</title>
+</head>
+
+<body>
+
+    {% block content %}
+    <ul class="notifications">
+        {% if current_user_notifications.count != 0 %}
+        {% for notice in current_user_notifications %}
+        <div class="alert alert-block alert-{{ notice.level }}">
+
+            <h4>
+                <i class="icon-mail{% if notice.unread %}-alt{% endif %}"></i>
+                {{ notice.verb }}
+                {% if notice.target %}
+                of {{ notice.target }}
+                {% endif %}
+            </h4>
+    
+            <p>{{ notice.timesince }} ago</p>
+    
+       
+        </div>
+
+        {% endfor %}
+       
+      
+        <form method = "POST">
+            {% csrf_token %}
+            <input class="btn btn-primary" type="submit" value="Прочесть все">
+        <form>
+    </ul>
+   
+        {% else %}
+        <div class="container">
+            <h2 class="text-center">Уведомлений нет</h2>
+        </div>
+        {% endif %}
+    {% endblock content %}
+
+</body>
+
+</html>

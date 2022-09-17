@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Поддержать проект{% endblock title %}</title>
+</head>
+<body>
+{% block content %}
+<div>
+    <h1 class="donatetext">Мы хотим, чтобы сервис оставался для вас бесплатным, а ваши данные — неприкосновенными. Для этого мы должны оплатить размещение наших серверов в Исландии и оплатить работу юристов, которые защищают ваши данные от посягательств госорганов.
+</h1>
+    <a href="https://www.donationalerts.com/r/conseolecheck"class="donatebut"><center>Поддержать проект</center></a>
+</div>
+{% endblock content %}
+
+</body>
+</html>

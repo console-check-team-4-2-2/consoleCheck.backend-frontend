@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Nintendo{% endblock title %}</title>
+</head>
+<body>
+    {% block content %}
+
+    <div class="container">
+
+        <div class="row">
+            <div>
+            <p><h3>Наличие Nintendo</h3></p>
+            </div>
+            <div class="col">
+
+                {% for p in products %}
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{p.photo.url}}" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <p class="card-text">Ссылка: <a href="{{p.slug_product}}">{{p.slug_product}}</a></p>
+                                </p>
+                                {% if request.user.is_superuser %}
+                                    <a href="{% url 'main_app:delete_product' p.id %}" class="btn btn-danger btn-sm" role="button">Удалить</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col">
+                <!-- <a><img class="ps5contr" src="{% static 'img/ps5contr.jpg' %}" width="50"></a> -->
+            </div>
+        </div>
+        {% if request.user.is_superuser %}
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Создать
+        </button>
+        {% endif %}
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Создание отслеживания</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <div class="modal-body">
+                            {% csrf_token %}
+                            {{form}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                            <button class="btn btn-primary" type="submit">Создать</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock content %}
+</body>
+</html>

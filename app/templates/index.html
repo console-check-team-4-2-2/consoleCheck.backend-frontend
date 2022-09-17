@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Мониторинг консолей нового поколения.</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        {% block content %}
+        <h1 class="">Не получается купить консоль или видеокарту? Мы знаем, где их искать, и поможем тебе
+        </h1>
+
+        <h2>
+            Откуда такая уверенность?
+            За время работы мы зафиксировали тысячи возможностей купить дефицитные товары в разных магазинах и
+            самыми разными способами. Наша команда знает, куда смотреть, чтобы ничего не пропустить, и круглосуточно
+            следит за поставками. Но главное – у нас есть большое комьюнити, которое не позволит ничего упустить.
+        </h2>
+    </div>
+    <div>
+        <a href="{% url 'main_app:xbox' %}" class="xboxbut">
+            <center>Xbox</center>
+        </a>
+        <a href="{% url 'main_app:switch' %}" class="switchbut">
+            <center>Switch</center>
+        </a>
+        <a href="{% url 'main_app:playstation5' %}" class="ps5but">
+            <center>Play Station 5</center>
+        </a>
+        </a>
+    </div>
+    <dib>
+        <img class="hero" src="{% static 'img/hero.png' %}">
+    </dib>
+    {% endblock content %}
+
+</body>
+
+</html>

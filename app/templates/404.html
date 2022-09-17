@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- Основное содержимое (на главной в любом случае выводим пациентов) -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Для настройки адаптивности под мобильные устройства (раскоментировать и убрать из main.css cтили для .container ) -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>{% block title %}Не найдено{% endblock title %}</title>
+</head>
+
+{% block content %}
+<!-- Генерация блока авторизации пользователя, если не авторизован -->
+
+<body class="text-center login_page vsc-initialized">
+    <h3 class="title_big">{{info}}</h3>
+</body>
+{% endblock content %}
+</html>

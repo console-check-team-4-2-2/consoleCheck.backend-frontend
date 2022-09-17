@@ -5,6 +5,7 @@ from django.contrib import auth
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from notifications.signals import notify
 
 from app.forms import LoginForm, RegistrationForm
 
@@ -41,6 +42,8 @@ def login_user(request):
             user = authenticate(request, username=user_finded.username, password=password)
             if user is not None and user.is_active:
                 login(request, user)
+                if not user.is_superuser:
+                    notify.send(sender=request.user, recipient=User.objects.filter(is_superuser=True), verb=f"Пользователь {user.email} зашел в систему")
                 return redirect('main_app:index')
         else:
             pass
@@ -55,3 +58,14 @@ def login_user(request):
 def logout_user(request):
     auth.logout(request)
     return HttpResponseRedirect("/")
+
+
+def unread_notifications(request):
+    current_user_notifications = request.user.notifications.unread()
+    if request.method == "POST":
+        request.user.notifications.mark_all_as_read()
+        return redirect(reverse('main_app:index'))
+    context = {
+        'current_user_notifications' : current_user_notifications,
+    }
+    return render(request, 'unread_notif.html', context)

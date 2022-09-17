@@ -18,14 +18,16 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import handler404, handler500
-from app.views import custom_exceptions
+from app.views import custom_exceptions, views
 from app.views.api_views import *
+from authorization.views import *
 
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from django.views.static import serve
 from django.conf.urls import url
+import notifications.urls
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -47,8 +49,11 @@ urlpatterns = [
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('products/', ProductList.as_view()),
     path('product-type/', ProductTypeList.as_view()),
+    # path('notifications/', include(notifications.urls, namespace='notifications')),
+    url('^inbox/notifications/', include(notifications.urls, namespace='notifications')),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
-    url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT})
+    url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+    path('unread_notifications/', unread_notifications, name='unread_notifications'),
 ] # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler500 = custom_exceptions.error500

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'authorization',
     'drf_yasg',
     'crispy_forms',
+    'notifications',
 ]
 
 MIDDLEWARE = [

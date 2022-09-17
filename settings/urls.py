@@ -19,11 +19,33 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import handler404, handler500
 from app.views import custom_exceptions
+from app.views.api_views import *
+
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+schema_view = get_schema_view(
+   openapi.Info(
+      title="Console-Check API",
+      default_version='v1',
+      description="console-check",
+   ),
+#    public=True,
+   permission_classes=[permissions.IsAdminUser],
+)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.urls')),
     path('authorization/', include('authorization.urls')),
+    path('swagger-json/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    path('products/', ProductList.as_view()),
+    path('product-type/', ProductTypeList.as_view())
+
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler500 = custom_exceptions.error500

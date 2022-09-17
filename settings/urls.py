@@ -15,8 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from django.conf.urls import handler404, handler500
+from app.views import custom_exceptions
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.urls')),
-]
+    path('authorization/', include('authorization.urls')),
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler500 = custom_exceptions.error500
+handler404 = custom_exceptions.error404

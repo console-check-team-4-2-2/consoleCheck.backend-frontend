@@ -34,19 +34,19 @@ def login_user(request):
     if request.user.is_authenticated:
         return redirect('main_app:index')
     if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            if User.objects.filter(email=cd['email']).exists():
-                user_finded = User.objects.get(email=cd['email'])
-                user = authenticate(request, username=user_finded.username, password=cd['password'])
-                if user is not None and user.is_active:
-                    login(request, user)
-                    return redirect('main_app:index')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        if User.objects.filter(email=email).exists():
+            user_finded = User.objects.get(email=email)
+            user = authenticate(request, username=user_finded.username, password=password)
+            if user is not None and user.is_active:
+                login(request, user)
+                return redirect('main_app:index')
+        else:
+            pass
     else:
         form = LoginForm()
     context = {
-        'form': form
     }      
     return render(request, 'login.html', context=context)
 

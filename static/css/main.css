@@ -1,0 +1,562 @@
+logo{
+position: absolute;
+width: 126px;
+height: 84px;
+left: 50px;
+top: 12px;
+pointer-events: none;
+
+}
+h1.maintext{
+position: absolute;
+width: 927px;
+height: 517px;
+left: 51px;
+top: 131px;
+
+font-family: Ubuntu;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 55px;
+
+color: #0070D1;}
+
+h2{
+position: absolute;
+width: 927px;
+height: 517px;
+left: 51px;
+top: 131px;
+margin-top: 200px;
+font-family: Ubuntu;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 41px;
+
+color: #000000;
+}
+
+border{
+position: absolute;
+width: 948px;
+height: 0px;
+left: 1146px;
+top: 131px;
+
+border: 1px solid #ADADAD;
+transform: rotate(89.94deg);}
+
+.xboxbut{
+position: absolute;
+width: 250px;
+color: white;
+height: 64px;
+left: 51px;
+top: 664px;
+text-decoration: none;
+
+
+background: #18B415;
+mix-blend-mode: normal;
+box-shadow: 0 -3px rgb(53,167,110) inset;
+transition: 0.2s;
+border-radius: 40px;
+font-family: Ubuntu;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 55px;
+}
+.xboxbut:hover { background: #289426; }
+.xboxbut:active {
+  background: #027400;
+  box-shadow: 0 3px rgb(33,147,90) inset;
+}
+
+.switchbut{
+position: absolute;
+width: 250px;
+color: white;
+height: 64px;
+left: 350px;
+top: 664px;
+text-decoration: none;
+
+
+background: #FE0000;
+mix-blend-mode: normal;
+box-shadow: #B60000;
+transition: 0.2s;
+border-radius: 40px;
+font-family: Ubuntu;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 55px;
+}
+.switchbut:hover { background: #B60000; }
+.switchbut:active {
+  background: #EA3333;
+  box-shadow: #B60000 inset;
+}
+.menu{
+position: absolute;
+width: 600px;
+height: 51px;
+left: 1300px;
+top: 36px;
+}
+.aboutbut{
+position: absolute;
+transition: 0.3s;
+
+width: 184px;
+height: 51px;
+left: 1290px;
+top: 36px;
+
+font-family: Ubuntu;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 41px;
+text-decoration: none;
+color: #000000;
+}
+
+.helpbut{
+transition: 0.3s;
+position: absolute;
+width: 350px;
+height: 51px;
+left: 1500px;
+top: 36px;
+padding-left: 40px;
+text-decoration: none;
+font-family: Ubuntu;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 41px;
+color: #000000;
+}
+
+.aboutbut:hover{
+color: #A9A9A9;
+
+}
+
+.helpbut:hover{
+color: #A9A9A9;
+
+}
+
+.logo{
+position: absolute;
+width: 126px;
+height: 84px;
+left: 50px;
+top: 6px;
+}
+
+.xboxtext{
+position: absolute;
+width: 117px;
+height: 49px;
+left: 70px;
+top: 5px;
+
+font-family: Ubuntu;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 55px;
+
+color: #FFFFFF;
+}
+.xboxtext:hover{
+color: #D0D0D0;
+}
+
+.hero{
+position: absolute;
+width: 1200px;
+height: 787px;
+left: 698px;
+top: 120px;
+}
+
+.headerback{
+position: absolute;
+width: 1920px;
+height: 112px;
+left: 0px;
+top: 0px;
+
+background: #ECECEC;
+}
+
+.ps5but{
+position: absolute;
+width: 550px;
+color: white;
+height: 64px;
+left: 50px;
+top: 754px;
+text-decoration: none;
+
+
+background: #0070D1;
+mix-blend-mode: normal;
+box-shadow: #B60000;
+transition: 0.2s;
+border-radius: 40px;
+font-family: Ubuntu;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 55px;
+}
+.ps5but:hover { background: #005EAF; }
+.ps5but:active {
+  background: #007FED;
+  box-shadow: #0070D inset;
+}
+
+
+h1.abouttext{
+position: absolute;
+width: 1127px;
+height: 517px;
+left: 54px;
+top: 113px;
+
+
+font-family: Ubuntu;
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 54px;
+
+color: #fffff;
+}
+
+h1.donatetext{
+position: absolute;
+width: 1127px;
+height: 517px;
+left: 54px;
+top: 113px;
+
+
+font-family: Ubuntu;
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 54px;
+
+color: #fffff;
+}
+
+.donatebut{
+position: absolute;
+width: 550px;
+color: white;
+height: 64px;
+left: 50px;
+top: 580px;
+text-decoration: none;
+
+
+background: #0070D1;
+mix-blend-mode: normal;
+box-shadow: #B60000;
+transition: 0.2s;
+border-radius: 40px;
+font-family: Ubuntu;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 55px;
+}
+.donatebut:hover { background: #005EAF; }
+.donatebut:active {
+  background: #007FED;
+  box-shadow: #0070D inset;
+}
+
+.ps5maintext{
+position: absolute;
+width: 554px;
+height: 53px;
+left: 187px;
+top: 139px;
+
+font-family: Ubuntu;
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 54px;
+
+color: #000000;
+}
+
+.ps5colortext{
+position: absolute;
+width: 554px;
+height: 53px;
+left: 400px;
+top: 139px;
+
+font-family: Ubuntu;
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 54px;
+
+color: #0070D1;
+
+}
+
+.block1{
+box-sizing: border-box;
+
+position: absolute;
+width: 732px;
+height: 170px;
+left: 174px;
+top: 220px;
+
+background: #e7e7e7;
+border: 1px solid #bababa;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+cursor: pointer;
+transition: 0.3s ;
+
+
+}
+.block1:hover {
+background: #dadada;
+transition: 0.3s ;
+}
+
+.block2{
+box-sizing: border-box;
+
+position: absolute;
+width: 732px;
+height: 170px;
+left: 174px;
+top: 440px;
+
+background: #e7e7e7;
+border: 1px solid #bababa;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+cursor: pointer;
+transition: 0.3s ;
+}
+.block2:hover {
+background: #dadada;
+transition: 0.3s ;
+}
+
+.block3{
+box-sizing: border-box;
+
+position: absolute;
+width: 732px;
+height: 170px;
+left: 174px;
+top: 660px;
+
+background: #e7e7e7;
+border: 1px solid #bababa;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+cursor: pointer;
+transition: 0.3s ;
+}
+
+.block3:hover {
+background: #dadada;
+transition: 0.3s ;
+}
+
+.block4{
+box-sizing: border-box;
+
+position: absolute;
+width: 732px;
+height: 170px;
+left: 174px;
+top: 880px;
+
+background: #e7e7e7;
+border: 1px solid #bababa;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+
+
+}
+
+.block4:hover {
+background: #dadada;
+transition: 0.3s ;
+cursor: pointer;
+}
+
+.block5{
+box-sizing: border-box;
+
+position: absolute;
+width: 732px;
+height: 170px;
+left: 174px;
+top: 1100px;
+background: #e7e7e7;
+border: 1px solid #bababa;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+cursor: pointer;
+transition: 0.3s ;
+}
+
+.block5:hover {
+background: #dadada;
+transition: 0.3s ;
+}
+
+.notavailable{
+margin-top: 24px;
+margin-left: 224px;
+font-family: 'Ubuntu';
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 41px;
+
+color: #FF0000;
+cursor: pointer;
+transition: 0.3s ;
+}
+
+.available{
+margin-top: 24px;
+margin-left: 224px;
+font-family: 'Ubuntu';
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 41px;
+
+color: #18B415;
+}
+
+.lastchange{
+font-family: 'Ubuntu';
+margin-left: 224px;
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 28px;
+
+color: #818181;}
+
+.timechange{
+margin-left: 224px;
+font-family: 'Ubuntu';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 28px;
+
+color: #000000;
+}
+
+.footer{
+
+
+position: absolute;
+width: 732px;
+height: 80px;
+left: 174px;
+top: 1250px;
+
+}
+.link{
+
+position: absolute;
+width: 57px;
+height: 57px;
+left: 835px;
+top: 271px;
+
+background: url(25284.png);
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+
+}
+.dnslogo{
+       top: 6px;
+    left: 6px;
+    width: 194px;
+    position: absolute;
+    border: 1px;
+    border-radius: 30px;
+    pointer-events: none;
+}
+.mvideologo{
+top: 6px;
+left: 6px;
+width: 192px;
+height: 158px;
+position: absolute;
+border: 1px;
+border-radius: 30px;
+pointer-events: none;
+    }
+.oneclogo{top: 6px;
+left: 6px;
+width: 192px;
+height: 158px;
+position: absolute;
+border: 1px;
+border-radius: 30px;
+pointer-events: none;
+}
+
+.eldlogo{top: 6px;
+left: 6px;
+width: 192px;
+height: 158px;
+position: absolute;
+border: 1px;
+border-radius: 30px;
+pointer-events: none;
+}
+
+.citylogo{top: 6px;
+left: 6px;
+width: 192px;
+height: 158px;
+position: absolute;
+border: 1px;
+border-radius: 30px;
+pointer-events: none;
+}
+
+.ps5contr{
+left: 999px;
+    width: 900px;
+    top: 226px;
+    position: absolute;
+    pointer-events: none;
+}
+
+a{
+text-decoration:none}
+
